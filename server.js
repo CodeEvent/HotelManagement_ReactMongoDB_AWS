@@ -31,11 +31,14 @@ app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 
 app.get('/', (req, res) => {
     res.render("index")
-
 })
+
 app.get('/add_guest', (req, res) => {
-    res.render("add_guest")
-    
+    res.render("add_guest") 
+});
+
+app.get('/update_guest', (req, res) => {
+    res.render("update_guest") 
 });
 
 app.listen(3000, ()=> {console.log(`Server is running on http://localhost:${PORT}`)})
