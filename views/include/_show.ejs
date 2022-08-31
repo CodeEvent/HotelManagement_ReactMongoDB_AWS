@@ -1,22 +1,17 @@
-<tr>
-    <td>1</td>
-    <td>Usernamea</td>
-    <td>exampl@gmail.com</td>
-    <td>Male</td>
-    <td>Active</td>
-    <td>
-        <a href="/update_guest" class="btn border-shadow update">
-            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
-        </a>
-        <a class="btn border-shadow delete">
-            <span class="text-gradient"><i class="fas fa-times"></i></span>
-        </a>
-    </td>
-        
-    
-    <td>
-        <a class="btn border-shadow delete">
-            <span class="text-gradient"><i class="fa-solid fa-circle-check"></i></span>
-        </a>
-    </td>
-</tr>
+<% for(var i = 0; i < guests.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= guests[i].name %></td>
+        <td><%= guests[i].email %></td>
+        <td><%= guests[i].gender %></td>
+        <td><%= guests[i].status %></td>
+        <td>
+            <a href="/update-guest?id=<%= guests[i]._id%>" class="btn border-shadow update">
+                <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+            </a>
+            <a class="btn border-shadow delete" data-id=<%= guests[i]._id%> >
+                <span class="text-gradient"><i class="fas fa-times"></i></span>
+            </a>
+        </td>
+    </tr>
+<% } %>
